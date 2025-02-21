@@ -32,6 +32,9 @@ Pod::Spec.new do |s|
   s.subspec 'Defines' do |sp|
     sp.public_header_files = 'GTMDefines.h'
     sp.source_files = 'GTMDefines.h'
+    sp.resource_bundle = {
+      "GoogleToolboxForMac_Privacy" => "Resources/Base/PrivacyInfo.xcprivacy"
+    }
   end
 
   s.subspec 'Core' do |sp|
@@ -66,6 +69,9 @@ Pod::Spec.new do |s|
   s.subspec 'Logger' do |sp|
     sp.source_files = 'Foundation/GTMLogger.{h,m}'
     sp.dependency 'GoogleToolboxForMac/Defines', "#{s.version}"
+    sp.resource_bundle = {
+      "GoogleToolboxForMac_Logger_Privacy" => "Resources/Logger/PrivacyInfo.xcprivacy"
+    }
   end
 
   # We cannot add a target for Foundaat/GTMLogger+ASL.{h,m}.
